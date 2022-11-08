@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className=" bg-base-100">
+        <div className=" bg-red-700 text-white">
             <div className="navbar container mx-auto">
                 <div className="flex-1">
-                    <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <Link className="btn btn-ghost normal-case text-3xl">HungryNaki</Link>
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">

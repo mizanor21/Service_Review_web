@@ -16,7 +16,7 @@ const FoodItem = ({ foodItem }) => {
                     <h2 className="card-title">{foodItem.title}</h2>
                     <p className='text-lg font-bold text-red-700'>{foodItem.price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning">Details</button>
+                        <button className="btn btn bg-red-700 border-none">Details</button>
                     </div>
                 </div>
             </div>

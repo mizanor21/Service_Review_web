@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FoodItem from '../FoodItem/FoodItem';
 
 const FoodItems = () => {
+    const samble = '-->';
     const [foodItems, setFoodItems] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/food-items')
@@ -24,8 +25,8 @@ const FoodItems = () => {
                     }
                 </div>
             </div>
-            <div className="container mx-auto text-end max-w-[1300px]">
-                <Link to={'/services'}><button className="btn btn-warning">See all</button></Link>
+            <div className="container mx-auto text-end max-w-[1200px] mb-10">
+                <Link to={'/services'}><button className="btn bg-red-700 border-none">See all {samble}</button></Link>
             </div>
         </div>
 

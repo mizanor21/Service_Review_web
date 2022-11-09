@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import FoodItem from '../FoodItem/FoodItem';
 
 const FoodItems = () => {
@@ -23,7 +24,11 @@ const FoodItems = () => {
                     }
                 </div>
             </div>
+            <div className="container mx-auto text-end max-w-[1300px]">
+                <Link to={'/services'}><button className="btn btn-warning">See all</button></Link>
+            </div>
         </div>
+
     );
 };
 

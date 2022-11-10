@@ -22,7 +22,7 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52">
                             <li><Link to={'/'}>Home</Link></li>
                             <li><Link to={'/blog'}>Blog</Link></li>
                             {
@@ -92,7 +92,7 @@ const Navbar = () => {
                                                 <img className='w-12 h-12 rounded-full border-2 ' src={currentUser.photoURL} alt="Profile not found!" />
                                             </div>
                                         </label>
-                                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-60">
+                                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-black rounded-box w-60">
                                             <p className='text-slate-500'>Sign in as</p>
                                             <li className='my-3'>{currentUser?.displayName}</li>
                                             <hr />
@@ -106,9 +106,7 @@ const Navbar = () => {
                                         <Link to={'/signin'}>
                                             <button className="btn glass mr-3">Signin</button>
                                         </Link>
-                                        {/* <Link to={'/signup'}>
-                                            <button className="btn glass mr-3">Signup</button>
-                                        </Link> */}
+
                                     </>
                             }
                         </div>

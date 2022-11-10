@@ -31,7 +31,7 @@ function App() {
         {
           path: '/services',
           element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://hungry-naki-server-mizanor21.vercel.app/services')
         },
         {
           path: '/add-service',
@@ -40,7 +40,7 @@ function App() {
         {
           path: '/service-details/:id',
           element: <ServiceDetails></ServiceDetails>,
-          loader: ({ params }) => fetch(`http://localhost:5000/service-details/${params.id}`)
+          loader: ({ params }) => fetch(`https://hungry-naki-server-mizanor21.vercel.app/service-details/${params.id}`)
         },
         {
           path: '/blog',

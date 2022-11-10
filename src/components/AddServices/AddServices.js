@@ -6,7 +6,7 @@ const AddServices = () => {
     useTitle('Add Service');
     const handleSubmit = event => {
         event.preventDefault();
-        fetch('http://localhost:5000/services', {
+        fetch('https://hungry-naki-server-mizanor21.vercel.app/services', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

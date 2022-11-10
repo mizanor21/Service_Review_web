@@ -6,7 +6,7 @@ const FoodItems = () => {
     const samble = '-->';
     const [foodItems, setFoodItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/food-items')
+        fetch('https://hungry-naki-server-mizanor21.vercel.app/food-items')
             .then(res => res.json())
             .then(data => setFoodItems(data))
     }, [])

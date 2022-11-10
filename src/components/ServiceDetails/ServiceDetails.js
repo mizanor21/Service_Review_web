@@ -14,7 +14,7 @@ const ServiceDetails = () => {
     const { title, img, details, ratting } = useLoaderData();
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://hungry-naki-server-mizanor21.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 setAllReview(data);
@@ -28,7 +28,7 @@ const ServiceDetails = () => {
         const newReview = { ...review, currentUser }
         // console.log(newReview)
 
-        fetch('http://localhost:5000/add-review', {
+        fetch('https://hungry-naki-server-mizanor21.vercel.app/add-review', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

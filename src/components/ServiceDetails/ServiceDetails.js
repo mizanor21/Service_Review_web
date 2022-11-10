@@ -5,9 +5,9 @@ import useTitle from '../useHooks/UseHook';
 
 const ServiceDetails = () => {
     const [review, setReview] = useState({});
-    const [allReview, setAllReview] = useState();
+    const [allReview, setAllReview] = useState([]);
     console.log(allReview);
-    const [userData, setUserData] = useState({ name: 'default', email: 'default@gmail.com', img: 'default' })
+    // const [userData, setUserData] = useState({ name: 'default', email: 'default@gmail.com', img: 'default' })
     const { currentUser } = useContext(AuthContext);
     useTitle('Service Details')
     const { title, img, details, ratting } = useLoaderData();
@@ -22,20 +22,17 @@ const ServiceDetails = () => {
     }, [])
 
     const handleReview = event => {
-        const userData = {
-            name: currentUser?.displayName,
-            email: currentUser?.email,
-            img: currentUser?.photoURL
-
-        }
-        setUserData(userData);
         event.preventDefault();
+        // console.log(review);
+        const newReview = { ...review, currentUser }
+        // console.log(newReview)
+
         fetch('http://localhost:5000/add-review', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(newReview)
         })
             .then(res => res.json())
             .then(data => {
@@ -44,6 +41,7 @@ const ServiceDetails = () => {
 
                 }
             })
+
     }
     const handleBlur = event => {
 
@@ -52,7 +50,6 @@ const ServiceDetails = () => {
         const newReview = { ...review }
         newReview[field] = value;
         setReview(newReview);
-        setUserData()
         // console.log(field, value)
     }
     return (
@@ -79,9 +76,9 @@ const ServiceDetails = () => {
             <div className="">
                 <p className='text-center text-3xl'>Item Reviews</p>
                 <div className="container mx-auto flex justify-center my-10">
-                    {/* {
+                    {
                         allReview.map(review => console.log(review))
-                    } */}
+                    }
                 </div>
             </div>
             {

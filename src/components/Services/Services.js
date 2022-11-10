@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../useHooks/UseHook';
 import Service from './Service';
@@ -6,7 +6,6 @@ import Service from './Service';
 const Services = () => {
     useTitle('Services')
     const services = useLoaderData();
-    // console.log(services)
     return (
         <div className=''>
             <div className="flex justify-center">

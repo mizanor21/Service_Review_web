@@ -1,14 +1,25 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import useTitle from '../useHooks/UseHook';
 
 const ServiceDetails = () => {
     const [review, setReview] = useState({});
+    const [allReview, setAllReview] = useState();
+    console.log(allReview);
     const [userData, setUserData] = useState({ name: 'default', email: 'default@gmail.com', img: 'default' })
     const { currentUser } = useContext(AuthContext);
     useTitle('Service Details')
     const { title, img, details, ratting } = useLoaderData();
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => {
+                setAllReview(data);
+                // console.log(data)
+            })
+    }, [])
 
     const handleReview = event => {
         const userData = {
@@ -54,7 +65,7 @@ const ServiceDetails = () => {
                         <div className="flex justify-end">
                             <div className="rating rating-lg rating-half">
                                 <input type="radio" name="rating-10" className="rating-hidden" />
-                                <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
+                                <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" defaultChecked />
                             </div>
                             <div className="flex justify-center items-center">
                                 <p className='ml-2'><span className='font-bold text-lg'>{ratting}</span>/5</p>
@@ -67,8 +78,10 @@ const ServiceDetails = () => {
 
             <div className="">
                 <p className='text-center text-3xl'>Item Reviews</p>
-                <div className="">
-
+                <div className="container mx-auto flex justify-center my-10">
+                    {/* {
+                        allReview.map(review => console.log(review))
+                    } */}
                 </div>
             </div>
             {

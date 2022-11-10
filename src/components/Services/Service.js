@@ -12,7 +12,7 @@ const Service = ({ service }) => {
                 <PhotoProvider>
                     <PhotoView key={service?.index} src={service?.img}>
                         <figure>
-                            <img src={service?.img} alt="car!" />
+                            <img src={service?.img} alt="img not found!" />
                         </figure>
                     </PhotoView>
                 </PhotoProvider>
@@ -22,7 +22,7 @@ const Service = ({ service }) => {
                         <div className="flex">
                             <div className="rating rating-lg rating-half">
                                 <input type="radio" name="rating-10" className="rating-hidden" />
-                                <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
+                                <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" defaultChecked />
                             </div>
                             <div className="flex justify-center items-center">
                                 <p className='ml-2'><span className='font-bold text-lg'>{service?.ratting}</span>/5</p>

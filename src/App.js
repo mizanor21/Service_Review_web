@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import AddServices from './components/AddServices/AddServices';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import HomePage from './components/Pages/Home/HomePage/HomePage';
 import Services from './components/Services/Services';
@@ -29,6 +30,10 @@ function App() {
           path: '/services',
           element: <Services></Services>,
           loader: () => fetch('http://localhost:5000/services')
+        },
+        {
+          path: '/add-service',
+          element: <AddServices></AddServices>
         }
       ],
 

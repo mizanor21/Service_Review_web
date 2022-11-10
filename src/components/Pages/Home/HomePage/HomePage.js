@@ -6,7 +6,7 @@ import FoodItems from '../FoodItems/FoodItems';
 const HomePage = () => {
     useTitle('Home')
     return (
-        <div className='min-w-full'>
+        <div className='min-h-screen'>
             <Banner></Banner>
             <FoodItems></FoodItems>
         </div>

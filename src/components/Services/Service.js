@@ -8,17 +8,29 @@ const Service = ({ service }) => {
         <div>
             <div className="card w-96 glass container mx-auto">
                 <PhotoProvider>
-                    <PhotoView key={service.index} src={service.img}>
+                    <PhotoView key={service?.index} src={service?.img}>
                         <figure>
-                            <img src={service.img} alt="car!" />
+                            <img src={service?.img} alt="car!" />
                         </figure>
                     </PhotoView>
                 </PhotoProvider>
                 <div className="card-body">
-                    <h2 className="card-title">{service.title}</h2>
-                    <p className='text-lg font-bold text-red-700'>{service.price}</p>
+                    <div className="flex justify-between items-center">
+                        <h2 className="card-title">{service?.title}</h2>
+                        <div className="flex">
+                            <div className="rating rating-lg rating-half">
+                                <input type="radio" name="rating-10" className="rating-hidden" />
+                                <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
+                            </div>
+                            <div className="flex justify-center items-center">
+                                <p className='ml-2'><span className='font-bold text-lg'>{service?.ratting}</span>/5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p className='text-lg font-bold text-red-700'>{service?.price}</p>
+                    <p>{service?.details}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning">Details</button>
+                        <button className="btn bg-red-700 border-none">Details</button>
                     </div>
                 </div>
             </div>

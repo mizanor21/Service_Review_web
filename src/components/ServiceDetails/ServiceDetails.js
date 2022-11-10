@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import Review from '../Review/Review';
 import useTitle from '../useHooks/UseHook';
 
 const ServiceDetails = () => {
@@ -75,10 +76,12 @@ const ServiceDetails = () => {
 
             <div className="">
                 <p className='text-center text-3xl'>Item Reviews</p>
-                <div className="container mx-auto flex justify-center my-10">
-                    {
-                        allReview.map(review => console.log(review))
-                    }
+                <div className="container my-10  flex justify-center items-center">
+                    <div>
+                        {
+                            allReview.map(review => <Review key={review._id} review={review}></Review>)
+                        }
+                    </div>
                 </div>
             </div>
             {

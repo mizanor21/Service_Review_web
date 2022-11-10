@@ -2,6 +2,7 @@ import React from 'react';
 import useTitle from '../../../useHooks/UseHook';
 import Banner from '../Banner/Banner';
 import FoodItems from '../FoodItems/FoodItems';
+import Order from '../Order/Order';
 
 const HomePage = () => {
     useTitle('Home')
@@ -9,6 +10,7 @@ const HomePage = () => {
         <div className='min-h-screen'>
             <Banner></Banner>
             <FoodItems></FoodItems>
+            <Order></Order>
         </div>
     );
 };

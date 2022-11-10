@@ -3,6 +3,7 @@ import './App.css';
 import AddServices from './components/AddServices/AddServices';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import HomePage from './components/Pages/Home/HomePage/HomePage';
+import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Services from './components/Services/Services';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
@@ -34,6 +35,11 @@ function App() {
         {
           path: '/add-service',
           element: <AddServices></AddServices>
+        },
+        {
+          path: '/service-details/:id',
+          element: <ServiceDetails></ServiceDetails>,
+          loader: ({ params }) => fetch(`http://localhost:5000/service-details/${params.id}`)
         }
       ],
 
